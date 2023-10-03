@@ -1,0 +1,38 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/style.css">
+        <script src="/script.js" defer></script> <!-- Moved script to the head and added the 'defer' attribute -->
+        <title>Thrifty Nook - Create Item</title>
+    </head>
+    <body>
+        <h1>Add Your Product Here</h1>
+        <form action="/api/items/create" method="POST" enctype="multipart/form-data" id="create-item-form">
+            <label for="title">Product:</label>
+            <input type="text" id="title" name="title" required>
+            
+            <label for="description">Summary:</label>
+            <textarea id="description" name="description" required></textarea>
+            
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" required>
+            
+            <label for="tags">Tags:</label>
+            <input type="text" id="tags" name="tags" required>
+            
+            <label for="images">Images:</label>
+            <input type="file" id="images" name="images" accept=".jpg, .jpeg, .png" required multiple>
+            
+            <!-- Image previews -->
+            <div id="image-previews"></div>
+            
+            <!-- Error messages -->
+            <div id="error-message" class="error"></div>
+            
+            <button type="submit">Create Item</button>
+        </form>
+    </body>
+    </html>
+
